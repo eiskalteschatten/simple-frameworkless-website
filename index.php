@@ -10,11 +10,13 @@
     "home" => array(),
     "test" => array(
       "title" => "Test Page 1",
-      "scripts" => ["testscripts.js"]
+      "scripts" => ["testscripts.js"],
+      "styles" => ["teststyles.css"]
     ),
     "deeper/test" => array(
       "title" => "Test Page 2",
-      "scripts" => ["testscripts.js"]
+      "scripts" => ["testscripts.js"],
+      "styles" => ["teststyles.css"]
     ),
     "404" => array(
       "title" => "Page Not Found"
@@ -37,6 +39,14 @@
     <title><?php if (isset($page_config["title"])) echo $page_config["title"] . " | "; ?> Simple Frameworkless Website</title>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <?php 
+      if (isset($page_config["styles"])) {
+        foreach ($page_config["styles"] as $styles) {
+          echo "<link rel=\"stylesheet\" href=\"/assets/css/" . $styles . "\">";
+        }
+      }
+    ?>
   </head>
   <body>
     <header>

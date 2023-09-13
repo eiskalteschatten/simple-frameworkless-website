@@ -1,1 +1,3 @@
-This is the homepage.
+<main>
+  This is the homepage.
+</main>

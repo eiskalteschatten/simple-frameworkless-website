@@ -1,1 +1,3 @@
-This is the test page #2.
+<main>
+  This is the test page #2.
+</main>
