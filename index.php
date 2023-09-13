@@ -5,6 +5,11 @@
 
   // Remove the unneeded parts: "/" and "index.php"
   array_splice($path_parts, 0, 2);
+
+  // TODO: page config:
+  // - path
+  // - title
+  // - etc
 ?>
 
 <html>
@@ -23,7 +28,9 @@
         include_once("pages/home.php");
       }
       else {
-        include_once("pages/" . implode("/", $path_parts) . ".php");
+        $page_path = "pages/" . implode("/", $path_parts) . ".php";
+        $page_path = file_exists($page_path) ? $path_path : "pages/404.php";
+        include_once($page_path);
       }
     ?>
 
