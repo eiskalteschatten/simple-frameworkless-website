@@ -4,6 +4,11 @@
   margin: 20px 0;
 }
 
+.selected-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
 footer {
   margin-top: 20px;
 }
