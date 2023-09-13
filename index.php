@@ -20,11 +20,10 @@
 
     <?php 
       if (count($path_parts) === 0 || $path_parts[0] === "") {
-        echo "home!";
+        include_once("pages/home.php");
       }
       else {
-        echo "not home!";
-        // TODO: import the page based on the path (the directory structure should match the URI path)
+        include_once("pages/" . implode("/", $path_parts) . ".php");
       }
     ?>
 
