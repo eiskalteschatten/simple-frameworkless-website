@@ -9,10 +9,12 @@
   $pages_config = array(
     "home" => array(),
     "test" => array(
-      "title" => "Test Page 1"
+      "title" => "Test Page 1",
+      "scripts" => ["testscripts.js"]
     ),
     "deeper/test" => array(
-      "title" => "Test Page 2"
+      "title" => "Test Page 2",
+      "scripts" => ["testscripts.js"]
     ),
     "404" => array(
       "title" => "Page Not Found"
@@ -34,7 +36,7 @@
   <head>
     <title><?php if (isset($page_config["title"])) echo $page_config["title"] . " | "; ?> Simple Frameworkless Website</title>
 
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
     <header>
@@ -46,5 +48,15 @@
     <footer>
       &copy; No One 2023
     </footer>
+
+    <script src="/assets/js/scripts.js"></script>
+    
+    <?php 
+      if (isset($page_config["scripts"])) {
+        foreach ($page_config["scripts"] as $script) {
+          echo "<script src=\"/assets/js/" . $script . "\"></script>";
+        }
+      }
+    ?>
   </body>
 </html>
