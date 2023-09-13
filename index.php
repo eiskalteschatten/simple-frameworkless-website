@@ -4,7 +4,8 @@
   $path_parts = explode("/", $full_path);
 
   // Remove the unneeded parts: "/" and "index.php"
-  array_splice($path_parts, 0, 2);
+  $amount_to_remove = isset($path_parts[1]) && $path_parts[1] === "index.php" ? 2 : 1;
+  array_splice($path_parts, 0, $amount_to_remove);
 
   $pages_config = array(
     "home" => array(),
@@ -51,6 +52,12 @@
   <body>
     <header>
       <h1>Simple Frameworkless Website</h1>
+
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/test">Test Page 1</a>
+        <a href="/deeper/test">Test Page 2</a>
+      </nav>
     </header>
 
     <?php include_once($page_path); ?>
