@@ -92,12 +92,12 @@
       &copy; No One 2023
     </footer>
 
-    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/scripts.js" defer></script>
     
     <?php 
       if (isset($page_config["scripts"])) {
         foreach ($page_config["scripts"] as $script) {
-          echo "<script src=\"/assets/js/" . $script . "\"></script>";
+          echo "<script src=\"/assets/js/" . $script . "\" defer></script>";
         }
       }
     ?>
