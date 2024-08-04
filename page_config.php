@@ -7,14 +7,18 @@ $pages_config = array(
   ),
   "test" => array(
     "title" => "Test Page 1",
-    "scripts" => ["testscripts.js"],
+    "scripts" => [
+      ["testscripts.js", "async"]
+    ],
     "styles" => ["teststyles.css"],
     "inMainNav" => true,
     "mainNavTitle" => "Test Page 1"
   ),
   "deeper/test" => array(
     "title" => "Test Page 2",
-    "scripts" => ["testscripts.js"],
+    "scripts" => [
+      ["testscripts.js", "defer"]
+    ],
     "styles" => ["teststyles.css"],
     "inMainNav" => true,
     "mainNavTitle" => "Test Page 2"

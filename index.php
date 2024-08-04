@@ -13,6 +13,16 @@
         }
       }
     ?>
+
+    <script src="/assets/js/scripts.js" async></script>
+
+    <?php
+      if (isset($page_config["scripts"])) {
+        foreach ($page_config["scripts"] as $script) {
+          echo "<script src=\"/assets/js/" . $script[0] . "\" $script[1]></script>";
+        }
+      }
+    ?>
   </head>
   <body>
     <header>
@@ -39,15 +49,5 @@
     <footer>
       &copy; No One 2023
     </footer>
-
-    <script src="/assets/js/scripts.js" defer></script>
-
-    <?php
-      if (isset($page_config["scripts"])) {
-        foreach ($page_config["scripts"] as $script) {
-          echo "<script src=\"/assets/js/" . $script . "\" defer></script>";
-        }
-      }
-    ?>
   </body>
 </html>
