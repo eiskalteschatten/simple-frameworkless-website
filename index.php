@@ -1,6 +1,7 @@
 <?php require_once("page_config.php"); ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title><?php if (isset($page_config["title"])) echo $page_config["title"] . " | "; ?> Simple Frameworkless Website</title>
 
