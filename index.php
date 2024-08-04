@@ -5,6 +5,8 @@
   <head>
     <title><?php if (isset($page_config["title"])) echo $page_config["title"] . " | "; ?> Simple Frameworkless Website</title>
 
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
     <link rel="stylesheet" href="/assets/css/styles.css">
 
     <?php
