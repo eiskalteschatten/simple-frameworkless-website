@@ -2,11 +2,11 @@
   display: flex;
   gap: 15px;
   margin: 20px 0;
-}
 
-.selected-link {
-  font-weight: bold;
-  text-decoration: none;
+  .selected-link {
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
 footer {
