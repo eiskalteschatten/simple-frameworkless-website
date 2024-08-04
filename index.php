@@ -35,11 +35,14 @@
         <?php
           foreach ($pages_config as $key => $_page_config) {
             if (isset($_page_config["inMainNav"]) && $_page_config["inMainNav"] === true) {
-              if (parse_uri_string() === $key) {
-                echo "<a href=\"/" . $key . "\" class=\"selected-link\">" . $_page_config["mainNavTitle"] . "</a>";
+              $is_homepage = $key === "home";
+              $href = $is_homepage ? "/" : "/" . $key;
+
+              if (parse_uri_string() === $key || (parse_uri_string() === "" && $is_homepage)) {
+                echo "<a href=\"" . $href . "\" class=\"selected-link\">" . $_page_config["mainNavTitle"] . "</a>";
               }
               else {
-                echo "<a href=\"/" . $key . "\">" . $_page_config["mainNavTitle"] . "</a>";
+                echo "<a href=\"" . $href . "\">" . $_page_config["mainNavTitle"] . "</a>";
               }
             }
           }
