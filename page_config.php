@@ -23,6 +23,15 @@ $pages_config = array(
     "inMainNav" => true,
     "mainNavTitle" => "Test Page 2"
   ),
+  "deeper" => array(
+    "title" => "Test Page 3",
+    "scripts" => [
+      ["testscripts.js", "defer"]
+    ],
+    "styles" => ["teststyles.css"],
+    "inMainNav" => true,
+    "mainNavTitle" => "Test Page 3"
+  ),
   "404" => array(
     "title" => "Page Not Found"
   )
@@ -48,6 +57,10 @@ function parse_uri_string(): string {
 $path_parts = parse_uri();
 $page_key = count($path_parts) === 0 || $path_parts[0] === "" ? "home" : implode("/", $path_parts);
 $page_path = "pages/" . $page_key . ".php";
+
+if (!file_exists($page_path)) {
+  $page_path = "pages/" . $page_key . "/index.php";
+}
 
 if (!file_exists($page_path)) {
   $page_key = "404";
